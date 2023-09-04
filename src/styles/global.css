@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #f39800;
+  --color-secondary: #a1d8e6;
+  --color-p-font: #333;
+  --color-s-font: #ababab;
+  --color-p-bg: #efefef;
+  --color-s-bg: #f39800;
+  --color-p-border: #ababab;
+  --color-s-border: #f39800;
+
+  --break-point-md: 768px;
+}
+html {
+  font-size: 16px;
+  color: var(--color-p-font);
+}
+@media screen and (min-width: var(--break-point-md)) {
+  html {
+    font-size: 18px;
+  }
+}
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "BIZ UDPGothic", Meiryo, "Noto Sans CJK JP",
+    sans-serif;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+a {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: var(--color-p-font);
+}
+
+@layer components {
+  .container-md {
+    @apply max-w-3xl mx-auto my-0;
+  }
+}

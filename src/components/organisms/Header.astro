@@ -1,0 +1,24 @@
+---
+import Logo from "@/components/atoms/Logo.astro";
+import Gnav from "@/components/modules/Gnav.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header>
+  <Logo width={50} height={50} />
+  <Gnav />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+</style>

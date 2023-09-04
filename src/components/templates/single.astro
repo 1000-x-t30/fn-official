@@ -1,0 +1,42 @@
+---
+import Transitions from "@/layouts/transitions.astro";
+import Header from "@/components/organisms/Header.astro";
+const title = "Frontend Nagoya";
+---
+
+<Transitions>
+  <div class="base">
+    <div class="base__header">
+      <Header title={title} />
+    </div>
+
+    <slot name="firstView" />
+
+    <main class="base__main container-md">
+      <slot name="contents" />
+    </main>
+
+    <footer class="base__footer">
+      <p><small>copylight xxx</small></p>
+    </footer>
+  </div>
+</Transitions>
+
+<style>
+  .base {
+    display: grid;
+    grid-template-areas:
+      "... header ..."/
+      "... main   ..."/
+      "... footer ...";
+  }
+  .base__header {
+    grid-area: "header";
+  }
+  .base__main {
+    grid-area: "main";
+  }
+  .base__footer {
+    grid-area: "footer";
+  }
+</style>

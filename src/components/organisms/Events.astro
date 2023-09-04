@@ -1,0 +1,28 @@
+---
+import Headline from "@/components/modules/Headline.astro";
+import { getEventList } from "@/utils/getEventList";
+
+const eventList = await getEventList();
+
+if (!eventList) {
+  return new Response(null, {
+    status: 404,
+    statusText: "Not found",
+  });
+}
+---
+
+<ul class="pb-4" transition:name="events">
+  {
+    eventList["entry:loop"].map((entry: any) => {
+      return <Headline title={entry.title} description={entry.summary} />;
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    /* gap: 16px; */
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import Btn from "@/components/atoms/Btn.astro";
+const nav = [
+  {
+    label: "FrontendNagoya",
+    link: "",
+  },
+  {
+    label: "イベント",
+    link: "/",
+  },
+];
+---
+
+<nav>
+  <ul>
+    {
+      nav.map((i) => (
+        <li>
+          <a href={i.link}>{i.label}</a>
+        </li>
+      ))
+    }
+    <li><Btn label="コミュニティに参加する" link="/" /></li>
+  </ul>
+</nav>
+
+<style>
+  nav,
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    margin: 0 0.5em;
+  }
+</style>

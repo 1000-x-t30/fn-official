@@ -1,0 +1,12 @@
+---
+import feLogo from "%/images/frontend758_logo.png";
+
+interface Props {
+  width: number;
+  height: number;
+}
+
+const { width, height } = Astro.props;
+---
+
+<a href="/"><img src={feLogo} width={width} height={height} alt="" /></a>

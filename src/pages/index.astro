@@ -1,0 +1,20 @@
+---
+import Single from "@/components/templates/single.astro";
+import MainVisual from "@/components/organisms/MainVisual.astro";
+import Events from "@/components/organisms/Events.astro";
+import FrameBtn from "@/components/atoms/FrameBtn.astro";
+import Members from "@/components/organisms/Members.astro";
+---
+
+<Single>
+  <MainVisual slot="firstView" />
+
+  <section slot="contents">
+    <article>
+      <h2 class="container-md">イベント情報</h2>
+      <Events />
+      <FrameBtn label="一覧へ" link="/events/" />
+    </article>
+    <Members />
+  </section>
+</Single>
